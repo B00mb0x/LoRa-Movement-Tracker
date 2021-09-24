@@ -109,17 +109,9 @@ class L76GNSS:
                 if len(nmea[start_idx:]) > 1:
                     print('{}'.format(nmea[start_idx:].decode('ASCII')), end='')
 
-    def return_nmea(self):
-        nmea = b''
-        nmea = self._read().lstrip(b'\n\n').rstrip(b'\n\n')
-        start_idx = nmea.find(b'$')
-        #print('raw[{}]: {}'.format(start_idx, nmea))
-        if nmea is not None and len(nmea) > 0:
-            if start_idx != 0:
-                if len(nmea[:start_idx]) > 1:
-                    return('{}'.format(nmea[:start_idx].decode('ASCII')))
-            if len(nmea[start_idx:]) > 1:
-                return('{}'.format(nmea[start_idx:].decode('ASCII')))
+    def speed(self):
+        #empty
+        pass
 
 
     def _checksum(self, nmeadata):
