@@ -58,7 +58,7 @@ while True:
         pos = [lat,long]
         dist = Haversine.Haversine(pos_old,pos).km
         direction = bearing.calculate_initial_compass_bearing(tuple(pos_old),tuple(pos))
-        velocity = dist/((time_new-time_old)*3600)
+        velocity = dist/((time_new-time_old)/3600)
     else:
         dist = None
         direction = None
@@ -88,4 +88,4 @@ while True:
     lat_old = lat
     long_old = long
     time_old = time_new
-    time.sleep(5)# wait some time before sending again.
+    time.sleep(1)# wait some time before sending again.
