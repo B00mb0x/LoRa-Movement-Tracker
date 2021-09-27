@@ -53,7 +53,7 @@ while True:
     lat = gps.coordinates()[0]
     long = gps.coordinates()[1]
     time_new = utime.ticks_ms()/1000.0
-    if lat_old != 0 and lat_old != None and long_old != 0 and long_old != None and lat != None and long != None:
+    if lat_old != 0 and lat_old != None and long_old != 0 and long_old != None and lat != None and long != None: #only calculate distance, when the old value is usable
         pos_old = [lat_old,long_old]
         pos = [lat,long]
         dist = Haversine.Haversine(pos_old,pos).km
